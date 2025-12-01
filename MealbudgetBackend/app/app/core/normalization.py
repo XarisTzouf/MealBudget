@@ -19,9 +19,6 @@ def round2(x: float) -> float:
 
 
 # Μετατρέπει μονάδες στη “βάση”:
-# - g, kg -> g (1 kg = 1000 g)
-# - ml, l -> ml (1 l = 1000 ml)
-# - piece/τμχ -> piece (χωρίς μετατροπή)
 # Άγνωστη μονάδα -> επέστρεψε (qty, unit) όπως είναι.
 def to_base_qty(qty: float, unit: str) -> Tuple[float, str]:
     u = (unit or "").strip().lower()
@@ -38,13 +35,12 @@ def to_base_qty(qty: float, unit: str) -> Tuple[float, str]:
     return qty, unit
 
 
-# Υπολογίζει τιμή ανά 100 (g/ml): value * (100 / qty) με ασφαλή διαίρεση.
+# Υπολογίζει τιμή ανά 100 (g/ml)
 def per_100(value: float, qty_in_g_or_ml: float) -> float:
     return value * safe_div(100.0, qty_in_g_or_ml)
 
 
 # Επιστρέφει kcal/protein/fat/carbs ανά 100g/ml.
-# Για 'piece' δεν γίνεται per-100: επιστρέφει τις αρχικές τιμές ως float.
 # Αν μονάδα άγνωστη ή qty=0 -> επιστρέφει μηδενικά.
 def normalize_nutrition_per_100(
     nutri: Dict[str, Optional[float]], qty: float, unit: str
@@ -70,7 +66,7 @@ def normalize_nutrition_per_100(
 
 
 
-# Υπολογίζει τιμή ανά 100g/ml. Για 'piece' επιστρέφει το ίδιο cost.
+# Υπολογίζει τιμή ανά 100g/ml. 
 # Άγνωστη μονάδα ή qty=0 -> 0.0.
 def price_per_100(cost: float, qty: float, unit: str) -> float:
     base_qty, base_unit = to_base_qty(qty, unit)

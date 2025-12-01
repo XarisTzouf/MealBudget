@@ -11,7 +11,6 @@ Base.metadata.create_all(bind=engine)
 
 
 from app.db.database import Base, engine
-# Εισαγωγή των ORM μοντέλων ώστε να δηλωθούν οι πίνακες πριν το create_all
 from app.db import orm_models as _models  # noqa: F401
 
 app = FastAPI(title="MealBudget API", version="0.1.0")

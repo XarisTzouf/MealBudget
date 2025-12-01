@@ -12,11 +12,11 @@ def solve(req: PlanRequest) -> PlanResponse:
     random.shuffle(main_items)
     random.shuffle(snack_items)
 
-    quantities = {} # {meal_id: qty}
+    quantities = {} 
     current_cost = 0.0
     current_kcal = 0.0
     
-    # Στόχος: Εβδομαδιαίες θερμίδες (αν δεν δόθηκε, υποθέτουμε 14000 = 2000*7)
+    # Στόχος: Εβδομαδιαίες θερμίδες 
     target_kcal = req.kcal_target if req.kcal_target else 14000.0
 
     # ---------------------------------------------------------
@@ -95,7 +95,7 @@ def solve(req: PlanRequest) -> PlanResponse:
         total_fat += original.fat * qty
         total_carbs += original.carbs * qty
 
-    # Sort για να φαίνονται όμορφα (π.χ. αλφαβητικά)
+    # Sort για να φαίνονται όμορφα 
     rows.sort(key=lambda x: x.name)
 
     return PlanResponse(

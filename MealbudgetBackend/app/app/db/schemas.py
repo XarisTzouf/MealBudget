@@ -5,21 +5,20 @@ from pydantic import BaseModel, ConfigDict
 # Χρησιμοποιεί from_attributes=True για να μπορεί να "διαβάσει" από ORM αντικείμενα.
 class MealRead(BaseModel):
     model_config = ConfigDict(from_attributes=True)
-    id: int                   # μοναδικό αναγνωριστικό στη ΒΔ
-    name: str                 # όνομα γεύματος/προϊόντος
-    category: str             # κατηγορία γεύματος (π.χ. breakfast, main, snack)
-    cost: Optional[float] = None    # κόστος (π.χ. € ανά μερίδα), μπορεί να λείπει
-    kcal: Optional[float] = None    # θερμίδες
-    protein: Optional[float] = None # πρωτεΐνη (g)
-    fat: Optional[float] = None     # λιπαρά (g)
-    carbs: Optional[float] = None   # υδατάνθρακες (g)
+    id: int                   
+    name: str                 
+    category: str             
+    cost: Optional[float] = None    
+    kcal: Optional[float] = None    
+    protein: Optional[float] = None 
+    fat: Optional[float] = None     
+    carbs: Optional[float] = None   
 
 # Schema για δημιουργία Plan (input από frontend στο POST /plans).
-# Δεν χρειάζεται from_attributes γιατί ΔΕΝ είναι ORM αντικείμενο.
 class PlanCreate(BaseModel):
-    title: str            # τίτλος πλάνου (π.χ. "Week A")
-    budget: float         # διαθέσιμο budget για το πλάνο
-    meal_ids: List[int]   # λίστα από IDs γευμάτων που θα μπουν στο πλάνο
+    title: str            
+    budget: float         
+    meal_ids: List[int]   
 
 # Schema για ανάγνωση Plan (output προς frontend).
 # Περιλαμβάνει και τα MealRead ώστε το UI να έχει έτοιμα τα δεδομένα των meals.
@@ -28,14 +27,14 @@ class PlanRead(BaseModel):
     id: int
     title: str
     budget: float
-    meals: List[MealRead] = []  # προεπιλογή κενή λίστα αν δεν υπάρχουν meals
+    meals: List[MealRead] = [] 
 
-# Απλό schema για στατιστικά ενός Plan (π.χ. για KPIs/γραφικά).
+# Απλό schema για στατιστικά ενός Plan 
 # Δεν βασίζεται σε ORM instance, οπότε δεν χρειάζεται from_attributes.
 class PlanStats(BaseModel):
-    plan_id: int      # σε ποιο plan αναφέρονται τα στατιστικά
-    total_cost: float # συνολικό κόστος όλων των meals στο plan
-    kcal: float       # άθροισμα θερμίδων
-    protein: float    # άθροισμα πρωτεΐνης (g)
-    fat: float        # άθροισμα λιπαρών (g)
-    carbs: float      # άθροισμα υδατανθράκων (g)
+    plan_id: int      
+    total_cost: float 
+    kcal: float       
+    protein: float    
+    fat: float        
+    carbs: float      

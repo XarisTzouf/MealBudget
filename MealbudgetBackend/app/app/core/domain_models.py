@@ -7,7 +7,7 @@ class PlanItemCandidate(BaseModel):
     meal_id: int
     name: str
     category: str
-    cost: float   # κόστος για 1 τεμάχιο/μερίδα
+    cost: float   
     kcal: float
     protein: float
     fat: float

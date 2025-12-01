@@ -5,7 +5,7 @@ OFF_URL = "https://world.openfoodfacts.org/api/v2/product/{barcode}.json"
 
 
 def _parse_quantity(q: str) -> Dict[str, Any]:
-    # προσπαθεί να βγάλει ποσότητα (αριθμό) και μονάδα από string π.χ. "500 g", "1 kg", "250ml"
+    # προσπαθεί να βγάλει ποσότητα  και μονάδα από string π.χ. "500 g", "1 kg", "250ml"
     if not q:
         return {"qty": 0.0, "unit": "piece"}
     s = q.strip().lower().replace(",", ".")

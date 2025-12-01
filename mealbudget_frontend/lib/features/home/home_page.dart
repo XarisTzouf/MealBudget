@@ -7,24 +7,24 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Χρησιμοποιούμε Stack για να βάλουμε το φόντο ΠΙΣΩ από τα γράμματα
+    
       body: Stack(
         children: [
-          // --- 1. ΤΟ ΦΟΝΤΟ (GRADIENT) ---
+          // --- 1. ΤΟ ΦΟΝΤΟ  ---
           Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Colors.white,        // Ξεκινάει λευκό πάνω
-                  Color(0xFFE8F5E9),   // Καταλήγει σε απαλό φυστικί (Green 50)
+                  Colors.white,        
+                  Color(0xFFE8F5E9),   
                 ],
               ),
             ),
           ),
 
-          // --- 2. ΔΙΑΚΟΣΜΗΤΙΚΟΙ ΚΥΚΛΟΙ (Blobs) ---
+          // --- 2. ΔΙΑΚΟΣΜΗΤΙΚΟΙ ΚΥΚΛΟΙ  ---
           Positioned(
             top: -50,
             right: -50,
@@ -32,7 +32,7 @@ class HomePage extends StatelessWidget {
               width: 200,
               height: 200,
               decoration: BoxDecoration(
-                color: const Color(0xFF2E8B57).withOpacity(0.05), // Πολύ αχνό πράσινο
+                color: const Color(0xFF2E8B57).withOpacity(0.05), 
                 shape: BoxShape.circle,
               ),
             ),
@@ -44,7 +44,7 @@ class HomePage extends StatelessWidget {
               width: 150,
               height: 150,
               decoration: BoxDecoration(
-                color: Colors.orange.withOpacity(0.05), // Πολύ αχνό πορτοκαλί
+                color: Colors.orange.withOpacity(0.05), 
                 shape: BoxShape.circle,
               ),
             ),
@@ -57,8 +57,7 @@ class HomePage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // Η ΕΙΚΟΝΑ ΛΟΓΟΤΥΠΟ (χωρίς φόντο)
-                  // Βεβαιώσου ότι έχεις το 'logo.png' στο assets/images/
+                  
                   Image.asset(
                     'assets/images/logo.png',
                     width: 200,
@@ -68,7 +67,7 @@ class HomePage extends StatelessWidget {
                   
                   const SizedBox(height: 20),
 
-                  // ΤΙΤΛΟΣ (RichText για διχρωμία)
+                  // ΤΙΤΛΟΣ 
                   RichText(
                     textAlign: TextAlign.center,
                     text: const TextSpan(
@@ -81,11 +80,11 @@ class HomePage extends StatelessWidget {
                       children: [
                         TextSpan(
                           text: "Meal",
-                          style: TextStyle(color: Color(0xFF2D333B)), // Σκούρο Γκρι
+                          style: TextStyle(color: Color(0xFF2D333B)), 
                         ),
                         TextSpan(
                           text: "Budget",
-                          style: TextStyle(color: Color(0xFF2E8B57)), // Πράσινο
+                          style: TextStyle(color: Color(0xFF2E8B57)), 
                         ),
                       ],
                     ),
@@ -115,7 +114,7 @@ class HomePage extends StatelessWidget {
                         BoxShadow(
                           color: const Color(0xFF2E8B57).withOpacity(0.3),
                           blurRadius: 15,
-                          offset: const Offset(0, 8), // Σκιά προς τα κάτω
+                          offset: const Offset(0, 8), 
                         )
                       ],
                     ),
@@ -124,7 +123,7 @@ class HomePage extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF2E8B57),
                         foregroundColor: Colors.white,
-                        elevation: 0, // Η σκιά έρχεται από το Container
+                        elevation: 0, 
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(16),
                         ),

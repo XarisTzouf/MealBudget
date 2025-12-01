@@ -1,4 +1,4 @@
-# tests/test_plans_api.py
+
 import pytest
 from fastapi.testclient import TestClient
 
@@ -43,7 +43,7 @@ def setup_db():
 
 
 def test_create_and_get_plan():
-    # Χρησιμοποιούμε τα ids 1 και 2 από τα seeded meals
+    
     payload = {
         "title": "Week A",
         "budget": 20.0,

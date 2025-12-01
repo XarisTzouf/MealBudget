@@ -1,6 +1,4 @@
 
-// lib/core/models.dart
-
 class MealRead {
   final int id;
   final String name;
@@ -26,7 +24,7 @@ class MealRead {
     return MealRead(
       id: json['id'],
       name: json['name'],
-      category: json['category'] ?? 'main', // Default τιμή αν δεν υπάρχει
+      category: json['category'] ?? 'main', 
       cost: (json['cost'] as num).toDouble(),
       kcal: (json['kcal'] as num).toDouble(),
       protein: (json['protein'] as num).toDouble(),

@@ -1,16 +1,16 @@
-# tests/test_budget_api.py
+
 from fastapi.testclient import TestClient
 from app.main import app
 
 client = TestClient(app)
 
 def test_optimize_success(monkeypatch):
-    # patch στη σωστή διαδρομή του solve
+    
     from app.api.endpoints import budget as budget_ep
 
     def fake_solve(req):
         class FakeResp(dict):
-            # Επιστρέφουμε dict που μοιάζει με PlanResponse
+            
             pass
         return {
             "title": "ok",

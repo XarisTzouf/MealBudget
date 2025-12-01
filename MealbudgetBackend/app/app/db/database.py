@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker, DeclarativeBase, Session
 # SQLite connection string (το αρχείο θα δημιουργηθεί τοπικά αν δεν υπάρχει)
 SQLALCHEMY_DATABASE_URL = "sqlite:///./mealbudget.db"
 
-# Δημιουργία engine για SQLite (check_same_thread=False για χρήση σε FastAPI dev server)
+# Δημιουργία engine για SQLite 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL,
     connect_args={"check_same_thread": False},

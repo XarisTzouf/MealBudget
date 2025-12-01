@@ -1,5 +1,4 @@
 
-// lib/data/mealbudget_api.dart
 
 import 'api_client.dart';
 import '../core/models.dart';

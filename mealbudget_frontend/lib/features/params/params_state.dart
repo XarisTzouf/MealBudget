@@ -33,7 +33,7 @@ class ParamsState {
       calories: calories ?? this.calories,
       mealsPerDay: mealsPerDay ?? this.mealsPerDay,
       isLoading: isLoading ?? this.isLoading,
-      error: error, // Αν είναι null, μένει null (καθαρίζει το error)
+      error: error, 
     );
   }
 }

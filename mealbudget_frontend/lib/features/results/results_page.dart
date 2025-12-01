@@ -54,7 +54,7 @@ class ResultsPage extends ConsumerWidget {
               children: [
                 Expanded(child: KpiCard(title: "TOTAL COST", value: "${plan.totalCost.toStringAsFixed(2)} €")),
                 const SizedBox(width: 8),
-                // ΔΙΟΡΘΩΣΗ 1: Αφαιρέθηκε το περιττό "${...}"
+                
                 Expanded(child: KpiCard(title: "TOTAL CALORIES", value: plan.totalKcal.toStringAsFixed(0))),
               ],
             ),
@@ -149,7 +149,7 @@ class MacroBarChart extends StatelessWidget {
         ),
         const SizedBox(height: 12),
         
-        // ΔΙΟΡΘΩΣΗ 2: Προστέθηκαν τα const όπου χρειάζεται (γιατί αυτά δεν αλλάζουν ποτέ)
+        
         const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

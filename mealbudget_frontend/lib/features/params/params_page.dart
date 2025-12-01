@@ -13,7 +13,7 @@ class ParamsPage extends ConsumerStatefulWidget {
 }
 
 class _ParamsPageState extends ConsumerState<ParamsPage> {
-  // Controllers
+ 
   late TextEditingController _budgetController;
   late TextEditingController _caloriesController;
   late TextEditingController _mealsController;
@@ -53,7 +53,7 @@ class _ParamsPageState extends ConsumerState<ParamsPage> {
       ),
       body: Stack(
         children: [
-          // 1. ΦΟΝΤΟ (GRADIENT)
+          // 1. ΦΟΝΤΟ 
           Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
@@ -67,21 +67,21 @@ class _ParamsPageState extends ConsumerState<ParamsPage> {
           // 2. ΠΕΡΙΕΧΟΜΕΝΟ
           Center(
             child: SingleChildScrollView(
-              // Αυξήσαμε λίγο το πάνω padding (από 100 σε 110) για να χωρέσει η εικόνα κάτω από το AppBar
+            
               padding: const EdgeInsets.fromLTRB(24, 110, 24, 20),
               child: Column(
                 children: [
-                  // --- Η ΔΙΚΗ ΣΟΥ ΕΙΚΟΝΑ HEADER (Κεντραρισμένη) ---
+                  
                   Center(
                     child: Image.asset(
-                      'assets/images/params_header.png', // Βεβαιώσου ότι το όνομα είναι σωστό!
-                      height: 120, // Ρύθμισε το ύψος όπως θέλεις
+                      'assets/images/params_header.png', 
+                      height: 120, 
                       fit: BoxFit.contain,
                     ),
                   ),
-                  const SizedBox(height: 30), // Κενό κάτω από την εικόνα
+                  const SizedBox(height: 30), 
 
-                  // Header Text (Αριστερά)
+                  // Header Text 
                   const Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -206,7 +206,7 @@ class _ParamsPageState extends ConsumerState<ParamsPage> {
                           ),
                   ),
 
-                  const SizedBox(height: 50), // Λίγο κενό στο τέλος (χωρίς footer)
+                  const SizedBox(height: 50), 
                 ],
               ),
             ),
@@ -217,7 +217,7 @@ class _ParamsPageState extends ConsumerState<ParamsPage> {
   }
 }
 
-// --- Helper Widget (ΕΚΤΟΣ της κλάσης _ParamsPageState) ---
+// --- Helper Widget 
 class _CustomTextField extends StatelessWidget {
   final TextEditingController controller;
   final String label;

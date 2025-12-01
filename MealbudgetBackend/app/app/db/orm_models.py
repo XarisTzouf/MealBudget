@@ -23,7 +23,7 @@ class Meal(Base):
     carbs: Mapped[float | None] = mapped_column(Float, nullable=True)
 
 class Plan(Base):
-    __tablename__ = "plans"  # πίνακας πλάνων
+    __tablename__ = "plans"  
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
     title: Mapped[str] = mapped_column(String, nullable=False)
