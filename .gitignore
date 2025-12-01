@@ -1,0 +1,22 @@
+# --- Python / Backend ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.env
+mealbudget.db  
+*.log
+
+# --- Flutter / Frontend ---
+.dart_tool/
+.packages
+.pub/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# --- IDEs ---
+.vscode/
+.idea/
+*.DS_Store
