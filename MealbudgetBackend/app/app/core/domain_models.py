@@ -1,5 +1,5 @@
 from typing import List, Optional
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, field_validator
 
 
 # Υποψήφιο γεύμα που μπορεί να χρησιμοποιήσει ο solver.
@@ -23,6 +23,13 @@ class PlanRequest(BaseModel):
     protein_min: Optional[float] = None
     fat_max: Optional[float] = None
     carbs_max: Optional[float] = None
+
+    @field_validator('budget')
+    @classmethod
+    def budget_must_be_positive(cls, v: float) -> float:
+        if v <= 0:
+            raise ValueError('Το budget πρέπει να είναι θετικό')
+        return v
 
 
 # Μια γραμμή του τελικού πλάνου (γεύμα με ποσότητα).

@@ -1,7 +1,5 @@
 from typing import Optional, Dict, Any, List, Tuple
 
-
-
 # Επιστρέφει 0.0 αν x είναι None, αλλιώς float(x).
 
 def safe_float(x: Optional[float]) -> float:
